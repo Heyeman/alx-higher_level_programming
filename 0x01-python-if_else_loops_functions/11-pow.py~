@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+def pow(a, b):
+    if b == 0:
+        return 1
+    else:
+        x = 1
+        if b > 0:
+            for i in range(b):
+                x = x * a
+            return x
+        else:
+            for i in range(-b):
+                x = x / a;
+            return x
+            
+            
+print(pow(2, 2))
+print(pow(98, 2))
+print(pow(98, 0))
+print(pow(100, -2))
+print(pow(-4, 5))
