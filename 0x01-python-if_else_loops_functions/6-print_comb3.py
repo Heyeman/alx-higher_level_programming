@@ -2,7 +2,8 @@
 for i in range(10):
     for j in range(10):
         if j > i:
-            if (j > 1) or (i < 9 and j < 10):
-                print(", ", end="")
-            print("{:d}{:d}".format(i, j), end="")
+            if i != 8 or j != 9:
+                print("{:d}{:d}".format(i, j), end=", ")
+            else:
+                print("{:d}{:d}".format(i, j))
     
