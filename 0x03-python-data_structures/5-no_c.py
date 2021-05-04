@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 def no_c(my_string):
     new = []
-    for i in range(len(my_string)):
-        if my_string[i] != "c" or my_string[i] != "C":
-            new.append(my_string[i])
+    for i in my_string:
+        if i != 'c' and i != "C":
+            new.append(i)
+    new = ''.join(map(str,new))
     return new
 
 print(no_c("Holberton School"))
