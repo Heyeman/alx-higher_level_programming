@@ -1,0 +1,48 @@
+This is "matrix_divided" module
+=========================
+
+This is a test file for matrix_divided function. First import matrix_divided
+from 0-add_integer.py module.
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix1 = [[1, 2, 3]]
+>>> print(matrix_divided(matrix1, 3))
+[[0.33, 0.67, 1.0]]
+>>> matrix2 = [[1.9]]
+>>> print(matrix_divided(matrix2, 3))
+[[0.63]]
+>>> matrix3 = [1.9]
+>>> print(matrix_divided(matrix3, 3))
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix4 = [[1, 2, 3], [4, 5, 6], [7, 8]]
+>>> print(matrix_divided(matrix4, 3))
+Traceback (most recent call last):
+	  ...
+TypeError: Each row of the matrix must have the same size
+>>> print(matrix_divided(None, 3))
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix5 = [["str", 'r', 3], [4, 5, 6], [7, 8]]
+>>> print(matrix_divided(matrix5, 3))
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix6 = ([1, 2, 3], [4, 5, 6])
+>>> print(matrix_divided(matrix6, 3))
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+	  ...
+ZeroDivisionError: division by zero
