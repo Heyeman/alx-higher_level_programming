@@ -1,0 +1,50 @@
+This is "100-matrix_mul.txt" module
+=========================
+
+This is a test file for 100-matrix_mul function. First import
+text_indentation from 100-matrix_mul.py module.
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Now use it:
+
+>>> print(matrix_mul([[1, 2], [3, 4], [5, 6]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22], [23, 34]]
+>>> print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+[[13, 16]]
+>>> print(matrix_mul([[1, 2, 6], [3, 4, 6], [5, 6, 6]], [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+	  ...
+ValueError: m_a and m_b can't be multiplied
+>>> print(matrix_mul([[1, 2, 6], [3, 4, 6], [5, 6, 6]], None))
+Traceback (most recent call last):
+	  ...
+TypeError: m_b must be a list
+>>> print(matrix_mul(None, None))
+Traceback (most recent call last):
+	  ...
+TypeError: m_a must be a list
+>>> print(matrix_mul([[1, "str"], [3, 4], [5, 6]], [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+	  ...
+TypeError: m_a should contain only integers or floats
+>>> print(matrix_mul([[1, "str"], [3, 4], [5, 6]], [['5', 2], [3, 4]]))
+Traceback (most recent call last):
+	  ...
+TypeError: m_a should contain only integers or floats
+>>> print(matrix_mul("string", "string"))
+Traceback (most recent call last):
+	  ...
+TypeError: m_a must be a list
+>>> print(matrix_mul([[1, 2]], [[], [5, 6]]))
+Traceback (most recent call last):
+	  ...
+TypeError: each row of m_b must be of the same size
+>>> print(matrix_mul([[]], [[]]))
+Traceback (most recent call last):
+	  ...
+ValueError: m_a can't be empty
+>>> print(matrix_mul([1, 2, 3], [[1], [2], [3]]))
+Traceback (most recent call last):
+	  ...
+TypeError: m_a must be a list of lists
