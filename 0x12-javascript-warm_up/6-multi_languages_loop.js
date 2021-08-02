@@ -1,8 +1,4 @@
 #!/usr/bin/node
-let arr = ["C is fun", "Python is cool", "JavaScript is amazing"];
-
-let x = 0;
-while (x < 3){
-    console.log(arr[x]);
-    x = x+1;
+for (const line of ['C is fun', 'Python is cool', 'Javascript is amazing']) {
+  console.log(line);
 }
