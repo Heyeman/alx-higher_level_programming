@@ -1,15 +1,22 @@
 #!/usr/bin/python3
-""" Class definition of State. Instance Base = declarative_base() """
-from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base, State
-from sqlalchemy.orm import relationship
+# Defines a City model.
+# Inherits from SQLAlchemy Base and links to the MySQL table cities.
+
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 
 class City(Base):
-    """City class"""
-    __tablename__ = 'cities'
+    """Represents a city for a MySQL database.
 
-    id = Column(Integer, primary_key=True, unique=True,
-                autoincrement=True, nullable=False)
+    Attributes:
+        id (str): The city's id.
+        name (sqlalchemy.Integer): The city's name.
+        state_id (sqlalchemy.String): The city's state id.
+    """
+    __tablename__ = "cities"
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
