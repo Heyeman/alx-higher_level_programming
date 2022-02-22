@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
 	from sys import argv
-	print("{:d}".format(sum(argv[1:])))
+	li = list(map(int,argv[1:]))
+	print("{:d}".format(sum(li)))
 
 
 
